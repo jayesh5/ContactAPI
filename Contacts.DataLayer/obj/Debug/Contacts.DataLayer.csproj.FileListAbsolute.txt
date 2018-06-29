@@ -1,0 +1,13 @@
+c:\users\jayesh.p\source\repos\ContactsAPI\Contacts.DataLayer\obj\Debug\Contacts.DataLayer.csproj.CoreCompileInputs.cache
+c:\users\jayesh.p\source\repos\ContactsAPI\Contacts.DataLayer\bin\Debug\Contacts.DataLayer.dll.config
+c:\users\jayesh.p\source\repos\ContactsAPI\Contacts.DataLayer\bin\Debug\Contacts.DataLayer.dll
+c:\users\jayesh.p\source\repos\ContactsAPI\Contacts.DataLayer\bin\Debug\Contacts.DataLayer.pdb
+c:\users\jayesh.p\source\repos\ContactsAPI\Contacts.DataLayer\bin\Debug\EntityFramework.dll
+c:\users\jayesh.p\source\repos\ContactsAPI\Contacts.DataLayer\bin\Debug\EntityFramework.SqlServer.dll
+c:\users\jayesh.p\source\repos\ContactsAPI\Contacts.DataLayer\bin\Debug\EntityFramework.xml
+c:\users\jayesh.p\source\repos\ContactsAPI\Contacts.DataLayer\bin\Debug\EntityFramework.SqlServer.xml
+c:\users\jayesh.p\source\repos\ContactsAPI\Contacts.DataLayer\obj\Debug\Contacts.DataLayer.csproj.CopyComplete
+c:\users\jayesh.p\source\repos\ContactsAPI\Contacts.DataLayer\obj\Debug\Contacts.DataLayer.dll
+c:\users\jayesh.p\source\repos\ContactsAPI\Contacts.DataLayer\obj\Debug\Contacts.DataLayer.pdb
+c:\users\jayesh.p\source\repos\ContactsAPI\Contacts.DataLayer\bin\Debug\NLog.dll
+c:\users\jayesh.p\source\repos\ContactsAPI\Contacts.DataLayer\bin\Debug\NLog.xml

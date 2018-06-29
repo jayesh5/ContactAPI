@@ -1,0 +1,147 @@
+﻿<style>
+    .form-group.required .control-label:after {
+        content: "*";
+        color: red;
+    }
+</style>
+<div class="clearfix"><br /></div>
+<div ng-app="myapp">
+    <div ng-controller="ContactCtrl">
+        <form novalidate name="frmContact" id="frmContact" class="form-horizontal row-border">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Contacts</h3>
+                </div>
+                <div class="panel-body">
+                    <div>
+                        <table class="table table-striped table-bordered" id="tblcontact">
+                            <thead class="alert-info">
+                                <tr>
+                                    <th style="display:none">Id</th>
+                                    <th>First Name</th>
+                                    <th>Last Name</th>
+                                    <th>Email</th>
+                                    <th>Phone No</th>
+                                    <th>Is Active?</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="dataModel in contacts">
+                                    <td style="display:none">{{dataModel.Id}}</td>
+                                    <td> {{dataModel.FirstName}}</td>
+                                    <td> {{dataModel.LastName}}</td>
+                                    <td>{{dataModel.Email}}</td>
+                                    <td>{{dataModel.PhoneNumber}}</td>
+                                    <td>{{ dataModel.Status ? 'Active' : 'Inactive'  }}</td>
+                                    <td>
+                                        <span id="save" class="btn btn-primary glyphicon glyphicon-pencil" ng-click="GetContactByID(dataModel)">                                          
+                                        </span>
+                                        <span id="save" class="btn btn-danger glyphicon glyphicon-remove" ng-click="DeleteContact(dataModel)">                                           
+                                        </span>
+                                    </td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <hr class="panel-primary" />
+                    <div class="clearfix"></div>
+                    <div class="alert" id="success-alert" role="alertdialog" style="display:none">
+                        <a href="#" class="close" data-dismiss="alert">&times;</a>
+                        <div class="message"></div>
+                    </div>
+                    <div class="panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title addtitle">Add Contact</h3>
+                        </div>
+                        <div class="clearfix"><br /></div>
+                        <div class="col-md-12">
+                            <div class="form-group required">
+                                <label class="col-md-2 control-label" for="input17"> First Name</label>
+                                <div class="col-md-10">
+                                    <input type="text"
+                                           id="idFirstName"
+                                           class="form-control"
+                                           name="nameFirstName" ng-model="firstName" required />
+                                    <div ng-messages="frmContact.nameFirstName.$error" class="text-danger">
+
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label" for="input17"> Last Name</label>
+                                <div class="col-md-10">
+                                    <input type="text"
+                                           id="idLastName"
+                                           class="form-control"
+                                           name="nameLastName" ng-model="lasttName" />
+
+                                </div>
+                            </div>
+                            <div class="form-group required">
+                                <label class="col-md-2 control-label" for="input17"> Email</label>
+                                <div class="col-md-10">
+                                    <input type="email"
+                                           id="idEmail"
+                                           class="form-control"
+                                           name="nameEmail" ng-model="email" required />
+                                    <div ng-messages="frmContact.nameEmail.$error" class="text-danger">
+
+                                        <div ng-message="email">Your email address is invalid</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group required">
+                                <label class="col-md-2 control-label" for="input17"> Phone No</label>
+                                <div class="col-md-10">
+                                    <input type="text"
+                                           id="idPhone"
+                                           class="form-control"
+                                           name="namePhone" ng-model="phonenumber" required
+                                           ng-pattern="/[1-9]{1}[0-9]{9}$/" />
+                                    <div ng-messages="frmContact.namePhone.$error" class="text-danger">
+
+                                        <div ng-message="pattern">Must be a valid 10 digit phone number and Not begin with zero</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label" for="input17"> Is Active ?</label>
+                                <div class="col-md-10">
+                                    <input type="checkbox"
+                                           id="idStatus"
+                                           class="checkbox"
+                                           name="nameStatus" ng-model="status" />
+
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-2">
+                                </div>
+                                <div class="col-md-10">
+                                    @*<span id="save" class="btn btn-success margin-right-btn" ng-click="SaveUpdate()">
+                                            <i class="icon-save"></i> {{btnText}}
+                                        </span>*@
+                                    <input type="submit" class="btn btn-success margin-right-btn" value="{{btnText}}" ng-click="SaveUpdate()" ng-disabled="frmContact.$invalid" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<script src="~/Scripts/angular.js"></script>
+<script src="~/Scripts/angular-messages.js"></script>
+<script src="~/ScriptsNg/Module/app.js"></script>
+<script src="~/ScriptsNg/Controller/ContactCtrl.js"></script>
+<script src="~/ScriptsNg/Services/ContactService.js"></script>
